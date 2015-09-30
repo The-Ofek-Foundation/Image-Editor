@@ -53,6 +53,5 @@
   height: 100%;
 }
 html {
-  /*background: url(http://www.ringstorattles.com/Site/1900x1200@72_mainpageJPG_quality7_lowOPACITY.jpg);*/
-  background-color: blue;
+  background: url(http://www.ringstorattles.com/Site/1900x1200@72_mainpageJPG_quality7_lowOPACITY.jpg);
 }
