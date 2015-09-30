@@ -1,3 +1,5 @@
+alert("I will be heard!")
+
 var background, context, image;
 var docwidth, docheight;
 var play_sound = true;
