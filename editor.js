@@ -40,7 +40,7 @@ image.onload = function() {
 };
 
 function change_image_src(src) {
-  image.src = src;
+  image.src = "http://crossorigin.me/" + src;
 }
 
 change_image_src($('#image-src').val());
