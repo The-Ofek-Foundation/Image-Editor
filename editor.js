@@ -37,7 +37,15 @@ image.onload = function() {
     pixels_original[i] = pixels[i];
   context.putImageData(data, 0, 0, 0, 0, data.width, data.height);
   original = null;
+  alert_commands();
 };
+
+function alert_commands() {
+  if (!getCookie("commands-shown")) {
+    alert("Press 'c' to enter commands!");
+    setCookie("commands-shown", "press 'c' to enter commands", 10);
+  }
+}
 
 function change_image_src(src) {
   image.src = "http://crossorigin.me/" + src;
@@ -616,6 +624,7 @@ $(document).keydown(function(e) {
       $('#image-src').blur();
       break;
     case 67: // c
+      setCookie("commands-shown", "press 'c' to enter commands", 10);
       color = "all";
       prompt_commands();
       break;
@@ -640,3 +649,21 @@ $('#background').mousemove(function(e) {
   if ($('#color-preview').is(":visible"))
     show_rgb(mouse_x, mouse_y, false);
 });
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
