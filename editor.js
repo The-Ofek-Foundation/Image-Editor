@@ -9,7 +9,7 @@ var color_inc;
 var data, pixels, pixels_copy;
 
 image = new Image();
-image.crossOrigin = "anonymous";
+image.crossorigin = "anonymous";
 
 docwidth = $(document).outerWidth(true);
 docheight = $(document).outerHeight(true);
@@ -48,7 +48,7 @@ function alert_commands() {
 }
 
 function change_image_src(src) {
-  image.src = "http://crossorigin.me/" + src;
+  image.src = src;
 }
 
 change_image_src($('#image-src').val());
